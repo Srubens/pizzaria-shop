@@ -1,0 +1,13 @@
+.navbar-toggler{
+    margin-right: 54px;
+    background: #000;
+}
+
+.navbar-toggler-icon{
+    border: 1px solid #fff;
+    height: 1px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0;
+}
