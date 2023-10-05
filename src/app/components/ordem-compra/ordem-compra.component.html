@@ -1,1 +1,34 @@
-<p>ordem-compra works!</p>
+<div class="container">
+    <div *ngIf="itemsCarrinho.length > 0; else semProdutos">
+    <form (ngSubmit)="confirmarCompra()">
+            <div *ngFor="let item of itemsCarrinho" >
+                <div class="d-flex mb-4 mt-5 flex-column flex-md-row align-items-center"  >
+                    <div class="col-md-2">
+                    <img [src]="item.img.url" alt={{item.titulo}} />
+                    </div>
+                    <div class="col-md-6">
+                    {{item.titulo}}
+                    {{item.desc}}
+                    </div>
+                    <div class="col-md-4">
+                    <button type="button"class="btn btn-primary" (click)="remove(item)" >-</button>
+                    {{ item.quantidade }}
+                    <button type="button" class="btn btn-primary" (click)="adicionar(item)" >+</button>
+                    {{ item.valor * item.quantidade | currency:'BRL':true }}
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        
+    <div class="col-md-12 col-12">
+      total do pedido: {{ carrinhoService.totalCarrinhoCompras() | currency:'BRL':true }}
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-orange" >Confirmar compra</button>
+    </form>
+    </div>
+<ng-template #semProdutos>
+    <p>Não há produtos no carrinho.</p>
+  </ng-template>
+  </div>
+  

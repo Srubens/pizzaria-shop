@@ -1,1 +1,24 @@
-<p>produto works!</p>
+<div class="container">
+    <div class="d-flex flex-md-row flex-column justify-content-center align-items-center mt-4">
+      <div class="col-md-auto col-12" >
+        <div id="tela">
+          <img data-js="foto1" class="foto" [src]="produto.img[0].url" />
+        </div>
+        <div class="main-small">
+          <img class="foto" data-js="foto2" [src]="produto.img[1].url" />
+          <img class="foto" data-js="foto3" [src]="produto.img[2].url" />
+          <img class="foto" data-js="foto4" [src]="produto.img[0].url" />
+        </div>
+      </div>
+      <div class="col-12 col-md-auto  ml-md-4">
+        <div class="card-item">
+          <h3>{{ produto.titulo }}</h3>
+          <p>{{ produto.desc }}</p>
+          <p>{{ produto.valor | currency:'BRL':true }}</p>
+          <a class="btn btn-success" (click)="addItemCarrinho()" >Adicionar ao carrinho</a>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  

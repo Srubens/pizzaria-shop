@@ -9,7 +9,7 @@
                             O melhor momento <br/>
                             de pedir pizza é <br/>
                         </h1>
-                        <a href="#">agora</a>
+                        <a class="btn btn-pedido" href="#produtos">agora</a>
                     </header>
                 </div>
                 <div class="col-12 col-md-6" >
@@ -34,7 +34,7 @@
                             <li>Pizza com a receita da casa.</li>
                             <li>Bem Macia com bastante bacon.</li>
                         </ul>
-                        <a href="#">Fazer Pedido</a>
+                        <a routerLink="/produto/2" >Fazer Pedido</a>
                     </header>
                 </div>
                 <div class="col-12 col-md-6" >
@@ -46,42 +46,25 @@
         </div>
     </div>
 
-    <div class="main-produtos">
+    <div class="section-produtos">
         <div class="container">
-            <div class="d-flex flex-md-row flex-column">
+            <div class="d-flex flex-md-row flex-column align-items-center text-center">
                 <div class="col-12">
-                    <header>
+                    <header id="produtos" >
                         <h1>Loja</h1>
                     </header>
+                    <br/>
+                    <br/>
                 </div>
             </div>
             <div class="d-flex flex-md-row flex-column">
-                <div class="col-md-3 col-12">
+                <div class="col-md-3 col-12" *ngFor="let produto of produtos async" >
                     <div class="main-produto">
-                        <img src="/assets/pizza-1.png" alt="pizza-1">
-                        <h3>Pizza Bacon</h3>
-                        <p>R$ 33,00</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-12">
-                    <div class="main-produto">
-                        <img src="/assets/pizza-1.png" alt="pizza-1">
-                        <h3>Pizza Bacon</h3>
-                        <p>R$ 33,00</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-12">
-                    <div class="main-produto">
-                        <img src="/assets/pizza-1.png" alt="pizza-1">
-                        <h3>Pizza Bacon</h3>
-                        <p>R$ 33,00</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-12">
-                    <div class="main-produto">
-                        <img src="/assets/pizza-1.png" alt="pizza-bacon">
-                        <h3>Pizza Bacon</h3>
-                        <p>R$ 33,00</p>
+                        <a [routerLink]="['/produto',produto.id]" >
+                            <img [src]="produto.img[0].url" alt="pizza-1">
+                            <h3> {{produto.titulo}}</h3>
+                            <p>{{produto.valor | currency:'BRL':true }}</p>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -100,6 +83,28 @@
         </div>
     </div>
     <div class="social-media">
-        Siga-nos no instagram
+        <h1>Siga-nos no instagram</h1>
+        <div class="d-flex flex-md-row flex-column">
+            <div class="col-md-3 col-12" >
+                <div class="main-insta">
+                    <img src="/assets/insta-1.jpg" alt="insta-1">
+                </div>
+            </div>
+            <div class="col-md-3 col-12" >
+                <div class="main-insta">
+                    <img src="/assets/insta-2.jpg" alt="insta-1">
+                </div>
+            </div>
+            <div class="col-md-3 col-12" >
+                <div class="main-insta">
+                    <img src="/assets/insta-5.jpg" alt="insta-1">
+                </div>
+            </div>
+            <div class="col-md-3 col-12" >
+                <div class="main-insta">
+                    <img src="/assets/insta-4.jpg" alt="insta-1">
+                </div>
+            </div>
+        </div>
     </div>
 </div>

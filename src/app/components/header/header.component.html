@@ -16,16 +16,21 @@
         <div class="d-flex flex-md-row flex-column justify-content-between align-items-center col-12">
           <ul class="navbar-nav ">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" [routerLink]="['']">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Produtos</a>
+              <a class="nav-link" href="#" >Produtos</a>
             </li>
           </ul>
 
           <ul class="navbar-nav d-flex flex-column flex-md-row flex-end">
-            <li class="nav-item">
-              <a class="nav-link">Carrinho</a>
+            <li class="nav-item nav-item-cart">
+              <a class="nav-link" routerLink="/ordem-compra">
+                <img class="icon-cart" src="/assets/carrinho.svg" alt="carrinho">
+                <span class="item-cart" >
+                  <span>{{ getCountCart() }}</span>
+                </span>
+              </a>
             </li>
           </ul>
 
