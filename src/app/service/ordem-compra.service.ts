@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class OrdemCompraService {
-  public URL = APIWHATS
+  public URL = environment.APIWHATS
 
   constructor(
     public carrinhoService:CarrinhoService,
@@ -17,8 +17,8 @@ export class OrdemCompraService {
   public efetivarCompra(pedido:Pedido):Observable<any>{
     let headers:HttpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
-      'DeviceToken': DEVICETOKEN,
-      'Authorization': AUTHORIZATION
+      'DeviceToken': environment.DEVICETOKEN,
+      'Authorization': environment.AUTHORIZATION
     })
     let valorTotal = this.carrinhoService.totalCarrinhoCompras()
     let msg = `Ola!\nO pedido feito foi:\n${pedido.itens.map((item) => item.titulo)},\nDescriação do pedido: ${pedido.itens.map((item) => {

@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class ProdutoService {
 
   public produtos:Produto[]|any
-  public URL = APIURL
+  public URL = environment.APIURL
   public produtoName:Produto[]|any
 
   constructor(
