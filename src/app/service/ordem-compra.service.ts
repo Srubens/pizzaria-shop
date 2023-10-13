@@ -17,8 +17,6 @@ export class OrdemCompraService {
   public efetivarCompra(pedido:Pedido):Observable<any>{
     let headers:HttpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
-      'SecretKey': environment.SECRETKEY,
-      'PublicToken': environment.PUBLICTOKEN,
       'DeviceToken': environment.DEVICETOKEN,
       'Authorization': environment.AUTHORIZATION
     })
@@ -30,7 +28,7 @@ export class OrdemCompraService {
     delete pedido.itens[0].img
     // console.log(pedido)
     // console.log(this.http)
-    let teste = {"number":environment.NUMBER, "text": msg}
+    let teste = {"number":5581985349872, "text": msg}
     return this.http.post(
       `${this.URL}/whatsapp/sendText`,
       (teste),

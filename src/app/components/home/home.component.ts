@@ -10,15 +10,36 @@ import { Produto } from 'src/app/shared/produto.model';
 })
 export class HomeComponent implements OnInit {
   produtos:Produto[]|any 
+  produtos1:Produto[]|any 
+  produtos2:Produto[]|any 
   
   constructor(
     private produtoService:ProdutoService
   ){}
 
   ngOnInit(): void {
-    this.produtoService.getProdutos()
-        .then((produtos:Produto[]) =>{
+    
+    // this.produtoService.getProdutos()
+    //     .then((produtos:Produto[]) =>{
+    //       this.produtos = produtos
+    //     })
+
+    this.produtoService.getProdutoName('Pizza')
+        .then((produtos:Produto[])=>{
+          console.log(produtos)
           this.produtos = produtos
+        })
+    
+    this.produtoService.getProdutoName('Bebidas')
+        .then((produtos:Produto[])=>{
+          console.log(produtos)
+          this.produtos1 = produtos
+        })
+    
+    this.produtoService.getProdutoName('Doces')
+        .then((produtos:Produto[])=>{
+          console.log(produtos)
+          this.produtos2 = produtos
         })
   }
 

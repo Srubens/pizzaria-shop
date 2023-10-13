@@ -10,6 +10,7 @@ export class ProdutoService {
 
   public produtos:Produto[]|any
   public URL = environment.APIURL
+  public produtoName:Produto[]|any
 
   constructor(
     private http:HttpClient
@@ -22,6 +23,15 @@ export class ProdutoService {
       .then((res:HttpClient) => {
         return res
       })
+  }
+
+  public async getProdutoName(name:any):Promise<any|Produto[]>{
+    return await this.http.get<any>(`${this.URL}/produtos?categoria=${name}`)
+    .toPromise()
+    .then((res:HttpClient) =>{
+      console.log(res)
+      return res
+    })
   }
 
   public getProdutoPorId(id:number):Promise<any|Produto>{

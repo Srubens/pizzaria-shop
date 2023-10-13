@@ -44,10 +44,10 @@ export class OrdemCompraComponent implements OnInit {
     let pedido:Pedido = new Pedido(
       this.carrinhoService.exibirItens()
     )
-    // console.log(pedido)
+    //console.log(pedido)
     this.ordemCompraService.efetivarCompra(pedido)
         .subscribe((resposta:any) =>{
-          //console.log(resposta)
+          // console.log(resposta)
           this.idPedido = resposta
           this.carrinhoService.limparCarrinho()
           this.redictHome()

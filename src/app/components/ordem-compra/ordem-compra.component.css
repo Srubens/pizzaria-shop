@@ -2,3 +2,15 @@ img{
     max-width: 100%;
     width: 150px;
   }
+
+  .btn-pedido{
+    background: var(--orange);
+    color:#fff;
+    margin-bottom: 20px;
+}
+
+.btn-pedido:hover{
+    border: 1px solid var(--orange);
+    background: var(--white);
+    color:var(--orange);
+}

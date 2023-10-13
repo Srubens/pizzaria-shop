@@ -2,3 +2,21 @@
     background: #000;
     color:#fff;
 }
+
+.main-cc-cards ul li,
+.main-social ul li{
+    list-style: none;
+}
+
+.main-cc-cards ul li>a,
+.main-social ul li>a{
+    color: var(--white);
+}
+
+.main-social ul li{
+    font-size: 20px;
+}
+
+.main-cc-cards ul li{
+    font-size: 32px;
+}

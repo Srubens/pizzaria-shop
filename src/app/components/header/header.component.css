@@ -1,6 +1,10 @@
+.navbar{
+  background: #000;
+}
+
 .navbar-toggler{
     margin-right: 54px;
-    background: #000;
+    background: var(--orange);
 }
 
 .navbar-toggler-icon{
@@ -18,12 +22,14 @@
 
 .icon-cart{
   position: absolute;
+  max-width: 100%;
+  width: 30px;
 }
 
 .item-cart{
   width: 28px;
   height: 28px;
-  background: var(--orange);
+  background: #fd7e14de;
   padding: 8px;
   border-radius: 4px;
   position: relative;
@@ -32,4 +38,13 @@
   color:var(--white);
   align-items: center;
   justify-content: center;
+  top:-6px;
+}
+
+.nav-link{
+  color: var(--orange);
+}
+
+.nav-link:hover{
+  color: var(--white);
 }

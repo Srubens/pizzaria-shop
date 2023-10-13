@@ -1,8 +1,20 @@
-html {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@700;800&family=Open+Sans:wght@300&display=swap');
+
+html{
     scroll-behavior: smooth;
+    font-family: 'Open Sans';
+}
+
+h1{
+    font-family: 'Open Sans';
 }
 
 img{
     max-width: 100%;
     height: auto;
+}
+
+:root{
+    --orange:#fd7e14;
+    --white:#fff;
 }

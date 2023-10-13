@@ -3,19 +3,16 @@
     <div class="main-header">
         <div class="container">
             <div class="d-flex flex-column col-12 flex-md-row justify-content-between align-items-center">
-                <div>
-                    <header>
+                <div class="col-12 col-md-12">
+                    <header class="main-header-text d-flex align-items-center flex-column" >
                         <h1>
-                            O melhor momento <br/>
-                            de pedir pizza é <br/>
+                            Pizzas do tamnho
                         </h1>
-                        <a class="btn btn-pedido" href="#produtos">agora</a>
+                        <span class="main_text">
+                            da sua fome
+                        </span>
+                        <a class="btn btn-pedido" href="#produtos">Pedir agora!</a>
                     </header>
-                </div>
-                <div class="col-12 col-md-6" >
-                    <div class="header-figure">
-                        <img src="/assets/pizza-1-teste.png" alt="pizza">
-                    </div>
                 </div>
             </div>
         </div>
@@ -24,7 +21,7 @@
     <div class="main-destaque">
         <div class="container">
             <div class="d-flex flex-column col-12 flex-md-row justify-content-around align-items-center">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 text-center mt-3 text-md-left">
                     <header class="destaque-details">
                         <h1>A mais pedida</h1>
                         <p>A queridissima desse mê foi a Pizza Bacon
@@ -34,7 +31,7 @@
                             <li>Pizza com a receita da casa.</li>
                             <li>Bem Macia com bastante bacon.</li>
                         </ul>
-                        <a routerLink="/produto/2" >Fazer Pedido</a>
+                        <a class="btn btn-pedido" routerLink="/produto/2" >Fazer Pedido</a>
                     </header>
                 </div>
                 <div class="col-12 col-md-6" >
@@ -51,29 +48,86 @@
             <div class="d-flex flex-md-row flex-column align-items-center text-center">
                 <div class="col-12">
                     <header id="produtos" >
-                        <h1>Loja</h1>
+                        <h1>Cardapio</h1>
                     </header>
                     <br/>
                     <br/>
                 </div>
             </div>
-            <div class="d-flex flex-md-row flex-column">
-                <div class="col-md-3 col-12" *ngFor="let produto of produtos async" >
-                    <div class="main-produto">
-                        <a [routerLink]="['/produto',produto.id]" >
-                            <img [src]="produto.img[0].url" alt="pizza-1">
-                            <h3> {{produto.titulo}}</h3>
-                            <p>{{produto.valor | currency:'BRL':true }}</p>
-                        </a>
+
+            <ul class="nav nav-pills mb-3 d-flex justify-content-center mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active mr-2" id="pills-home-tab" data-toggle="pill" 
+                  data-target="#pills-home" role="tab" 
+                  aria-controls="pills-home" aria-selected="true">Pizzas</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link mr-2" id="pills-profile-tab" data-toggle="pill" 
+                  data-target="#pills-profile" role="tab" 
+                  aria-controls="pills-profile" aria-selected="false">Bebidas</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="pills-contact-tab" data-toggle="pill" 
+                  data-target="#pills-contact" role="tab" 
+                  aria-controls="pills-contact" aria-selected="false">Doces</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                    <div class="d-flex flex-md-row flex-column flex-row flex-wrap">
+                        <div class="col-md-3 col-12 justify-content-center d-flex" *ngFor="let produto of produtos async" >
+                            <div class="main-produto">
+                                <a [routerLink]="['/produto',produto.id]" >
+                                    <img [src]="produto.img[0].url" alt="pizza-1">
+                                    <h3> {{produto.titulo}}</h3>
+                                    <p>{{produto.valor | currency:'BRL':true }}</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                    <div class="d-flex flex-md-row flex-column">
+                        <div class="col-md-3 col-12" *ngFor="let produto of produtos1 async" >
+                            <div class="main-produto">
+                                <a [routerLink]="['/produto',produto.id]" >
+                                    <img [src]="produto.img[0].url" alt="pizza-1">
+                                    <h3> {{produto.titulo}}</h3>
+                                    <p>{{produto.valor | currency:'BRL':true }}</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                 aria-labelledby="pills-contact-tab">
+
+                 <div class="d-flex flex-md-row flex-column">
+                    <div class="col-md-3 col-12" *ngFor="let produto of produtos2 async" >
+                        <div class="main-produto">
+                            <a [routerLink]="['/produto',produto.id]" >
+                                <img [src]="produto.img[0].url" alt="pizza-1">
+                                <h3> {{produto.titulo}}</h3>
+                                <p>{{produto.valor | currency:'BRL':true }}</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                </div>
+              </div>
+
+            
         </div>
     </div>
     <div class="main-promo">
         <div class="container">
             <div class="d-flex flex-column flex-md-row justify-content-around col-12 align-items-center">
-                <div class="main-promo-content-1 col-12 col-md-6" >
+                <div class="main-promo-content-1 col-12 col-md-6 d-flex justify-content-center " >
                     <img src="/assets/promo-1.png" alt="promo-1">
                 </div>
                 <div class="main-promo-content col-12 col-md-6" >
@@ -83,26 +137,37 @@
         </div>
     </div>
     <div class="social-media">
+        <br/>
         <h1>Siga-nos no instagram</h1>
+        <br/>
+        <br/>
         <div class="d-flex flex-md-row flex-column">
             <div class="col-md-3 col-12" >
                 <div class="main-insta">
-                    <img src="/assets/insta-1.jpg" alt="insta-1">
+                    <a href="https://www.instagram.com/p/CwBKfmkvkjj/?img_index=1" target="_blank" >
+                        <img src="/assets/insta-1.jpg" alt="insta-1">
+                    </a>
                 </div>
             </div>
             <div class="col-md-3 col-12" >
                 <div class="main-insta">
-                    <img src="/assets/insta-2.jpg" alt="insta-1">
+                    <a href="https://www.instagram.com/p/CvAlZnSLAjf/?img_index=1" target="_blank" >
+                        <img src="/assets/insta-2.jpg" alt="insta-1">
+                    </a>
                 </div>
             </div>
             <div class="col-md-3 col-12" >
                 <div class="main-insta">
-                    <img src="/assets/insta-5.jpg" alt="insta-1">
+                    <a href="https://www.instagram.com/p/CKXUKbKLMcY/" target="_blank" >
+                        <img src="/assets/insta-5.jpg" alt="insta-1">
+                    </a>
                 </div>
             </div>
             <div class="col-md-3 col-12" >
                 <div class="main-insta">
-                    <img src="/assets/insta-4.jpg" alt="insta-1">
+                    <a href="https://www.instagram.com/p/CPn3KCkrtVP/" target="_blank" >
+                        <img src="/assets/insta-4.jpg" alt="insta-1">
+                    </a>
                 </div>
             </div>
         </div>

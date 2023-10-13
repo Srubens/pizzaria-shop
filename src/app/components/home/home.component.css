@@ -6,27 +6,75 @@ html {
 .main-header{
     width: 100%;
     height: 500px;
-    background: url('/assets/banner-header.png');
+    background: url('/assets/pizza-5.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+}
+
+.main-header-text{
+    margin-top: 90px;
 }
 
 .main-header h1{
     font-family: 'Bebas Neue';
-    font-size: 80px;
+    font-size: 60px;
     color:#fff;
+    
+}
+
+.main-header h1, span{
+    /* background: red; */
+    padding: 8px;
+    text-shadow:4px 4px #000;
+}
+
+.main_text{
+    font-family: 'Bebas Neue';
+    font-size: 62px;
+    color:#fff;
+    display: flex;
+    margin-top: -30px;
+    margin-bottom: 20px;
 }
 
 .btn-pedido{
-    width: 350px;
-    background: #fd7e14;
+    width: 200px;
+    background: var(--orange);
     color:#fff;
     font-size: 20px;
     text-transform: uppercase;
 }
 
+.btn-pedido:hover{
+    border: 1px solid var(--orange);
+    background: var(--white);
+    color:var(--orange);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+    background: var(--orange);
+    color:#fff;
+    cursor: pointer;
+}
+
+.nav-item:hover{
+    color:var(--orange);
+    cursor: pointer;
+}
+
+
 .main-header img{
     max-width: 100%;
     width: 700px;
+}
+
+.main-destaque{
+    background: url('/assets/bg-banner.png');
+    background-repeat: no-repeat;
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
 }
 
 .header-figure{
@@ -43,13 +91,38 @@ html {
 .section-produtos{
     margin-bottom: 25px;
     padding: 30px;
-    margin-top: 30px;
+    font-family: 'Open Sans';
 }
 
 .main-produto {
     max-width: 100%;
     width: 298px;
-    border:1px solid #ffa54a;
+    /* border:1px solid #ffa54a; */
+    height: 298px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f7f7f7;
+    margin-bottom: 18px;
+    
+}
+
+.main-produto a h3{
+    color:var(--orange);
+    font-size: 1.4rem;
+}
+
+.main-produto a p{
+    color:#000;
+}
+
+.main-produto:hover{
+    max-width: 100%;
+    width: 298px;
+    border:2px solid #ffd865;
     height: 298px;
     border-radius: 8px;
     display: flex;
@@ -93,3 +166,26 @@ html {
     text-align: center;
 }
 
+@media (max-width: 576px){
+    .main-promo{
+        height: 500px;
+    }
+    
+    .main-promo-content{
+        max-width: 100%;
+        width: 300px;
+        margin-top: 8px;
+    }
+
+    .main-promo-content-1 img{
+        max-width: 100%;
+        width: 250px;
+        margin-top: 35px;
+        margin-bottom: 20px;
+    }
+    .main-insta a img{
+        max-width: 100%;
+        width: 350px;
+        margin-bottom: 30px;
+    }
+}
