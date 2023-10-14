@@ -32,13 +32,11 @@ export class HomeComponent implements OnInit {
     
     this.produtoService.getProdutoName('Bebidas')
         .then((produtos:Produto[])=>{
-          console.log(produtos)
           this.produtos1 = produtos
         })
     
     this.produtoService.getProdutoName('Doces')
         .then((produtos:Produto[])=>{
-          console.log(produtos)
           this.produtos2 = produtos
         })
   }

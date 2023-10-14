@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class OrdemCompraService {
-  public URL = 'https://cluster.apigratis.com/api/v2'
+  public URL = environment.APIWHATS
 
   constructor(
     public carrinhoService:CarrinhoService,
@@ -23,12 +23,11 @@ export class OrdemCompraService {
     })
     let valorTotal = this.carrinhoService.totalCarrinhoCompras()
     
-    let msg = `Olá ${pedido.nome}.\nSeu Pedido foi:\n${pedido.titulo},\nDescrição do pedido: ${pedido.desc}\nQuantidade: ${pedido.quantidade}\n${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorTotal)}\nSeu pedido já foi anotado e está sendo finalizado.`
+    let msg = `Olá ${pedido.nome}.\nSeu Pedido foi:\n${pedido.arrpedidos.map((item:any) => item.titulo)}.\nDescrição do pedido: ${pedido.arrpedidos.map((item:any)=>{ return `${item.desc},\nQuantidade ${item.quantidade}` })}.\n\nTotal R$:${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorTotal)}\nSeu pedido já foi anotado e está sendo finalizado.`
     
     console.log('Mensagem:',msg)
     delete pedido.img
     console.log(pedido)
-   
     let teste = { "number":+`55${pedido.telefone}`,"text":msg }
     return this.http.post(
       `${this.URL}/whatsapp/sendText`,

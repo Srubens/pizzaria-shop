@@ -52,14 +52,14 @@ export class OrdemCompraComponent implements OnInit {
     let pedido:Pedido = new Pedido(
       this.carrinhoService.exibirItens()
     )
+    console.log(pedido)
     let novoPedido:any = {}
-    for( let i = 0; i < pedido.itens.length; i++){
-      novoPedido = pedido.itens[i] 
-      console.log(pedido.itens[i])
-    }
     console.log('novo pedido')
     novoPedido.nome = this.formulario.value.nome
     novoPedido.telefone = this.formulario.value.telefone
+    novoPedido.arrpedidos = pedido.itens
+    console.log(novoPedido)
+    
     // console.log(novoPedido)
     this.ordemCompraService.efetivarCompra(novoPedido)
       .subscribe((resposta:any)=>{
