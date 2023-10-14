@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { CarrinhoService } from 'src/app/service/carrinho.service';
 import { OrdemCompraService } from 'src/app/service/ordem-compra.service';
 import { ItemCarrinho } from 'src/app/shared/item-carrinho.model';
@@ -17,6 +19,12 @@ export class OrdemCompraComponent implements OnInit {
   public idPedido:number|any
   public itemsCarrinho:ItemCarrinho[] = []
   private router:Router
+
+  public formulario:FormGroup = new FormGroup({
+    'nome':new FormControl(null),
+    'telefone':new FormControl(null)
+  })
+
   constructor(
     public carrinhoService:CarrinhoService,
     private ordemCompraService:OrdemCompraService,
@@ -44,14 +52,22 @@ export class OrdemCompraComponent implements OnInit {
     let pedido:Pedido = new Pedido(
       this.carrinhoService.exibirItens()
     )
-    //console.log(pedido)
-    this.ordemCompraService.efetivarCompra(pedido)
-        .subscribe((resposta:any) =>{
-          // console.log(resposta)
-          this.idPedido = resposta
-          this.carrinhoService.limparCarrinho()
-          this.redictHome()
-        })
+    let novoPedido:any = {}
+    for( let i = 0; i < pedido.itens.length; i++){
+      novoPedido = pedido.itens[i] 
+      console.log(pedido.itens[i])
+    }
+    console.log('novo pedido')
+    novoPedido.nome = this.formulario.value.nome
+    novoPedido.telefone = this.formulario.value.telefone
+    // console.log(novoPedido)
+    this.ordemCompraService.efetivarCompra(novoPedido)
+      .subscribe((resposta:any)=>{
+        console.log(resposta)
+        this.idPedido = resposta
+        this.carrinhoService.limparCarrinho()
+        this.redictHome()
+      })
   }
 
 }

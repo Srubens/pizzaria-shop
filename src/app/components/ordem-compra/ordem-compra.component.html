@@ -1,30 +1,38 @@
 <div class="container">
     <div *ngIf="itemsCarrinho.length > 0; else semProdutos">
-    <form (ngSubmit)="confirmarCompra()">
+    <form [formGroup]="formulario" (ngSubmit)="confirmarCompra()">
             <div *ngFor="let item of itemsCarrinho" >
                 <div class="d-flex mb-4 mt-5 flex-column flex-md-row align-items-center"  >
                     <div class="col-md-2">
                     <img [src]="item.img.url" alt={{item.titulo}} />
                     </div>
                     <div class="col-md-6">
-                    {{item.titulo}}
-                    {{item.desc}}
+                      <div >  {{item.titulo}}</div>
+                      <div > {{item.desc}}</div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" >
                     <button type="button"class="btn btn-primary" (click)="remove(item)" >-</button>
-                    {{ item.quantidade }}
+                        {{ item.quantidade }}
                     <button type="button" class="btn btn-primary" (click)="adicionar(item)" >+</button>
-                    {{ item.valor * item.quantidade | currency:'BRL':true }}
+                       {{ item.valor * item.quantidade | currency:'BRL':true }}
                     </div>
                     <br/>
                 </div>
             </div>
         
-    <div class="col-md-12 col-12">
+    <div class="col-md-12 col-12" >
       total do pedido: {{ carrinhoService.totalCarrinhoCompras() | currency:'BRL':true }}
     </div>
     <br/>
-    <button type="submit" class="btn btn-pedido" >Confirmar compra</button>
+    <div class="d-flex flex-column flex-md-row flex-wrap col-12 col-md-12">
+        <label class="col-md-6 col-12" >
+            <input formControlName="nome" class="form-control" type="text" placeholder="digite seu nome">
+        </label>
+        <label class="col-md-6 col-12 mb-4" >
+            <input formControlName="telefone" class="form-control" type="text" placeholder="digite seu telefone com ddd">
+        </label>
+        <button type="submit" class="btn btn-pedido col-md-3" >Confirmar compra</button>
+    </div>
     </form>
     </div>
 <ng-template #semProdutos>
