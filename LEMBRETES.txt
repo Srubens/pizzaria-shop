@@ -1,0 +1,6 @@
+ng build --configuration production
+build de produção
+npm i -g @angular/cli
+para colocar o prodution dentro do projeto
+
+ng serve --configuration=production

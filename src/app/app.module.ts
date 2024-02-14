@@ -12,6 +12,7 @@ import localePt from "@angular/common/locales/pt"
 import { registerLocaleData } from '@angular/common';
 import { CarrinhoService } from './service/carrinho.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GoogleSheetService } from './service/google-sheet.service';
 registerLocaleData(localePt,'pt');
 
 @NgModule({
@@ -32,7 +33,8 @@ registerLocaleData(localePt,'pt');
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt-BR'},
-    CarrinhoService
+    CarrinhoService,
+    GoogleSheetService
   ],
   bootstrap: [AppComponent]
 })

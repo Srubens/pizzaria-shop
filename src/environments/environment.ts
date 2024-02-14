@@ -1,8 +1,12 @@
 export const environment = {
     production:false,
     APIWHATS:'https://cluster.apigratis.com/api/v2',
-    DEVICETOKEN:'de185f29-70aa-4f15-9cf6-a1fd790a54b8',
+    DEVICETOKEN:'d830957f-598f-45e2-9db9-abc5b7f5face',
     AUTHORIZATION:'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3BsYXRhZm9ybWEuYXBpYnJhc2lsLmNvbS5ici9hdXRoL2xvZ2luIiwiaWF0IjoxNjg1NTM1OTc2LCJleHAiOjE3MTcwNzE5NzYsIm5iZiI6MTY4NTUzNTk3NiwianRpIjoiWldjM3ZoVHdua1ZKd05HayIsInN1YiI6IjMyMDMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.DzHK_0ycke_By2wP2Vo-s8ip6PLFhp344QU4RtvW8Wo',
     NUMBER:5581985349872,
-    APIURL:"https://pizzaria-shop-server.onrender.com"
+    APIURL:"https://pizzaria-shop-server.onrender.com",
+    EMAILCLIENT:"projeto-teste@projeto-teste-403220.iam.gserviceaccount.com",
+    PRIVATEKEY:"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCbesyyz6/RxBLF\n+DwK+xI9CD/+FmWTA+DjziGPUD32skjS4VOf3TgJkNjI8xrMmSrLOXGp09Vd3JO3\ndXhGKbDA97/UWVF++6fRsk+YKhpe3ppJrmqgGB/2FGF+21v1XqHfw8igZr47vVhr\naOTX569Q5JfLCaohEzY6IgQv1PhCJ1Oh4stMDJiFV0qSXCQ4BQkPE2+285RiOsl+\nnqj1J6lKIUd/yN8icrPTwWhenfJTc156fkIClSlw7UnVLluxyFJGO/c17ASNmuq5\n28wn+svUEbq7opYrBkTXuSWioYE5szbPW2c/fd/V75065yFkMNxjlYq7L0PDOjoi\nFSif5vnJAgMBAAECggEAQSIH566OgosnrCxqBtWYFd5DZI+AXL6msvgS4gUk+BhG\n3qTLUfCr/YHi9we0hdpybXEylwjpXOk/Ln808/uaErSW9X+3XsFQ081lf6K/qleJ\nfe1luIxyszVlhG2jj95lZKaRgPSZo9AV3uUx3OqvbG1e041IapOwR1khtOH8YEWO\nwL2MaFohZdXaUko1XOOKWz4wKj25sbHW6O4FDk8QqdWucaD3Th+vVQdcVwrHkpHK\ndB0TfQMosAnp9m9nDHhsMMyZUc4JwEU4png1WDa/qHKdsoAmKdeEyKzPtEhACuw6\n9IKW36H4o0L1ydLEmwtQgh9pR2A9mpQyEPQ1+MI2WwKBgQDVXMQAzdQfXWgvid6a\nvg7UCpj7bo0dKteJBQTycvOFfKzdMUWQiu48w5F4ibIHKA9cJ7nh8WkVTym1QQlL\nKXmNIDAcnp8yqck7AYaS0NflaMSS1OzykjyxhtdJwsmvHkhoUzlZT6P0BOxwMQOi\n2uFQ3K1Krbr+45lSAYpPM/oCKwKBgQC6jNw9kpD74tUTIkuzYUCvNT/z+5X9G51D\nbHeu5/OiEkthT2/XugqkApS7QG1vZH/8sTNstwfbDf68MM6p6tSxJ5/Fs0jG9W2/\nOGR7CqpCubMLJK+2N80npzsoAOiBAWdnfkvAB0tnFs42Ur2XPSAf7DDe1341i7SA\nOP0ac3jd2wKBgAsTV7Fa/enq5V+iXoXV29sx+aMDqBudf7bDJfCX+wAw6qBI0H2i\nWJ+a31BMhYtNjw6PmVybNYM/qsCX8a2PJ5ol05mIumbc3W9MsvmoEaz89UdR+kLV\nSIVGpKJVlDac8dFIkK+MLMyb/NIOGUw45H1YFz7LKevVUL4rCkz2O8IlAoGBAKkB\n4K5v0KZDNOMm2Qpke2PAjHYQYixzDiD9bdiqD9GvXVeFzj/VLrq0E+cpUXvvwvw9\n1ecSUy2kGjqIxVKvi44L5fYInVCTHaB2CKJoYSQedRUNYZtmJplcKn3thLcLfJEI\nnLwWX7u/r4cLovQXzrjdFNFuzcrZDOh1uOhz4PatAoGBAIy3bSJIYeD6NJgze+NC\nkn92g8S1ttFmExvOULcOtt+uXCWntw9NR/Tkst+RmAmMHvj08JR7syWmY+JpIcP4\n8NB6JKFmvWiOwV7lzN/toOtKAAIOTfH7WNGzrdLUlIcLp5sQr9RVyNXrDFJMyxdc\nTrCOoX1EtOn/vACUUJp7rQmK\n-----END PRIVATE KEY-----\n",
+    WEBSITE:'https://www.googleapis.com/auth/spreadsheets',
+    CHAVE:'1Oonv1N6OxCHgJigMWDBB6ftWmvmTZXYT72DfCLlHKoM'
 };
