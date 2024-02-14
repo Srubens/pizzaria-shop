@@ -6,5 +6,5 @@ export const environment = {
     DEVICETOKEN:'',
     AUTHORIZATION:'',
     NUMBER:'',
-    APIURL:''
+    APIURL:'',
 };
