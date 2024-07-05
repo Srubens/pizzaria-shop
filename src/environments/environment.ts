@@ -1,7 +1,7 @@
 export const environment = {
     production:false,
     APIWHATS:'https://cluster.apigratis.com/api/v2',
-    DEVICETOKEN:'b1f028a4-ac5e-46d4-ae70-78e9617eb340',
+    DEVICETOKEN:'4d0ae8c7-eaca-48eb-bbb8-0a284048cb0f',
     AUTHORIZATION:'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3BsYXRhZm9ybWEuYXBpYnJhc2lsLmNvbS5ici9zb2NpYWwvZ29vZ2xlL2NhbGxiYWNrIiwiaWF0IjoxNzE3NDA0MDQyLCJleHAiOjE3NDg5NDAwNDIsIm5iZiI6MTcxNzQwNDA0MiwianRpIjoiYXp1S0p5RjhNbmtocEZRZCIsInN1YiI6IjMyMDMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.nC247EcXDounZ8T50BozrknbaAkUq-NTCMw4UwzDV3s',
     NUMBER:5581985349872,
     APIURL:"https://pizzaria-shop-server.onrender.com",
